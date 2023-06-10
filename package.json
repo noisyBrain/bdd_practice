@@ -6,6 +6,7 @@
     "scripts": {
         "start": "node .",
         "build": "tsc",
+        "bdd": "cucumber-js --publish-quiet --require-module ts-node/register --require 'features/**/*.ts'",
         "dev": "ts-node-dev --respawn --no-deps --rs --cls ./src/index.ts",
         "eslint": "eslint src/**/*.ts"
     },
