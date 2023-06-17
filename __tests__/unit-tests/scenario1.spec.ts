@@ -11,3 +11,8 @@ test('should find a book', () => {
   const book = bookService.find('tdd');
   expect(book).toEqual([{ name: 'clean tdd' }]);
 })
+
+test('BookFactory should receive an agent as parameter or implement a fake agent by default', () => {
+  const bookService = new BookFactory().build();
+  expect(bookService).toBeInstanceOf(BookService);
+})
