@@ -8,7 +8,7 @@ Given('que quiero aprender sobre tdd', function () {
 });
 
 When('escribo {string} en el sistema', function (string: string) {
-  this.result = this.service.findBook(string);
+  this.result = this.service.find(string);
   return this.result
 });
 

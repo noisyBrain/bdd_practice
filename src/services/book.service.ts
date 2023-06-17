@@ -1,11 +1,11 @@
 import { BookApiInterface } from "../interfaces/BookApi.interface";
 
 export class BookService {
-  constructor(private agent: BookApiInterface) {
+  constructor(private readonly agent: BookApiInterface) {
     this.agent = agent;
   }
 
-  findBook(name: string) {
+  find(name: string) {
     return this.agent.findBook(name)
   }
 }

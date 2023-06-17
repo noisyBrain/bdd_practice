@@ -8,6 +8,6 @@ test('book service should be defined', () => {
 
 test('should find a book', () => {
   const bookService = new BookFactory().build();
-  const book = bookService.findBook('tdd');
+  const book = bookService.find('tdd');
   expect(book).toEqual([{ name: 'clean tdd' }]);
 })
