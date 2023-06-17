@@ -1,6 +1,12 @@
+import { BookApiInterface } from "../interfaces/BookApi.interface";
+
 export class BookService {
-  find() {
-    return [{ name: 'clean tdd' }]
+  constructor(private agent: BookApiInterface) {
+    this.agent = agent;
+  }
+
+  findBook(name: string) {
+    return this.agent.findBook(name)
   }
 }
 
