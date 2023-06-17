@@ -5,7 +5,7 @@ import { BookService } from '../../src/services/book.service';
 import { FakeBookServiceApiAgent } from '../../src/agents/FakeBookServiceApiAgent';
 
 Given('que quiero aprender sobre tdd', function () {
-  this.service = new BookService(new FakeBookServiceApiAgent())
+  this.service = new BookFactory().build()
 });
 
 When('escribo {string} en el sistema', function (string: string) {
