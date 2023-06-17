@@ -1,8 +1,7 @@
 import { strict as assert } from 'assert';
 import { Given, When, Then } from '@cucumber/cucumber';
 
-import { BookService } from '../../src/services/book.service';
-import { FakeBookServiceApiAgent } from '../../src/agents/FakeBookServiceApiAgent';
+import { BookFactory } from '../../__tests__/factory/BookFactory';
 
 Given('que quiero aprender sobre tdd', function () {
   this.service = new BookFactory().build()

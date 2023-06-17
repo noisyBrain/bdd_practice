@@ -1,5 +1,5 @@
 import { BookService } from '../../src/services/book.service';
-import { FakeBookServiceApiAgent } from '../../src/agents/FakeBookServiceApiAgent';
+import { BookFactory } from '../factory/BookFactory';
 
 test('book service should be defined', () => {
   const bookService = new BookFactory().build()
