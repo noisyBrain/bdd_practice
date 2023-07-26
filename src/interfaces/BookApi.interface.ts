@@ -1,3 +1,5 @@
+import { Book } from '../agents/types/Book';
+
 export interface BookApiInterface {
-  findBook(name: string): Object[];
+  findBook(name: string): Promise<Book[]> | Book[];
 }
