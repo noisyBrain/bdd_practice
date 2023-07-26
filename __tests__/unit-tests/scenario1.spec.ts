@@ -10,7 +10,7 @@ test('book service should be defined', () => {
 test('should find a book', () => {
   const bookService = new BookFactory().build();
   const book = bookService.find('tdd');
-  expect(book).toEqual([{ name: 'clean tdd' }]);
+  expect(book).toEqual([{ title: 'clean tdd' }]);
 });
 
 test('BookFactory should receive an agent as parameter or implement a fake agent by default', () => {

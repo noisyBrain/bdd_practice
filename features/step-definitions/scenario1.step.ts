@@ -13,5 +13,5 @@ When('escribo {string} en el sistema', function (string: string) {
 });
 
 Then('el sistema me debe retornar una lista de los mejores libros relacionados', function () {
-  assert.deepStrictEqual(this.result, [{ name: 'clean tdd' }]);
+  assert.deepStrictEqual(this.result, [{ title: 'clean tdd' }]);
 });
