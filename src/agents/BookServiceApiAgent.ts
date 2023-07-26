@@ -4,7 +4,13 @@ import { BookApiInterface } from '../interfaces/BookApi.interface';
 import { Book } from './types/Book';
 
 export class BookServiceApiAgent implements BookApiInterface {
-  findBook(_name: string): Object[] {
-    return [{ name: 'clean tdd 1' }]
+  async findBook(title: string): Promise<Book[]> {
+    const response = await axios.get(`https://openlibrary.org/search.json?q=${title}`);
+
+    const books = response.data.docs.filter(
+      (book: Book) => book.subject && book?.subject?.includes('Computer software')
+    );
+
+    return books;
   }
 }
