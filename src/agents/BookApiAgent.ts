@@ -25,4 +25,8 @@ export class BookApiAgent implements BookApiInterface {
 
     return validTags.some((validTag: string) => tagsList.some((tag: string) => tag === validTag));
   }
+
+  hasValidTopics(book: any /* should receive a DTO */): boolean {
+    return book.subject && this.areValidTags(book.subject);
+  }
 }
