@@ -18,7 +18,7 @@ test('BookFactory should receive an agent as parameter or implement a fake agent
   expect(bookService).toBeInstanceOf(BookService);
 });
 
-test('BookService should return a a list of books', async () => {
+test('BookService should return a list of books', async () => {
   const bookService = new BookFactory(new BookServiceApiAgent()).build();
   const books = await bookService.find('tdd');
   expect(books.length).toBeGreaterThan(0);
