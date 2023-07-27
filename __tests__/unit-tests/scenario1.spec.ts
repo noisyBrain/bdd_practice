@@ -1,6 +1,6 @@
 import { BookService } from '../../src/services/book.service';
 import { BookFactory } from '../factory/BookFactory';
-import { BookServiceApiAgent } from '../../src/agents/BookServiceApiAgent';
+import { BookApiAgent } from '../../src/agents/BookApiAgent';
 
 test('book service should be defined', () => {
   const bookService = new BookFactory().build();
@@ -18,8 +18,8 @@ test('BookFactory should receive an agent as parameter or implement a fake agent
   expect(bookService).toBeInstanceOf(BookService);
 });
 
-test('BookService should return a list of books', async () => {
-  const bookService = new BookFactory(new BookServiceApiAgent()).build();
+test('BookServiceApiAgent should return a list of books', async () => {
+  const bookService = new BookFactory(new BookApiAgent()).build();
   const books = await bookService.find('tdd');
   expect(books.length).toBeGreaterThan(0);
 });
