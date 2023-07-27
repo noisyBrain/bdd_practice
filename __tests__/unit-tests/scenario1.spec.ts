@@ -18,8 +18,19 @@ test('BookFactory should receive an agent as parameter or implement a fake agent
   expect(bookService).toBeInstanceOf(BookService);
 });
 
-test('BookServiceApiAgent should return a list of books', async () => {
+test('BookApiAgent should return a list of books', async () => {
   const bookService = new BookFactory(new BookApiAgent()).build();
   const books = await bookService.find('tdd');
   expect(books.length).toBeGreaterThan(0);
+});
+
+test('BookApiAgent should return true if tags exists', () => {
+  const agent = new BookApiAgent();
+  const result = agent.areValidTags([
+    'Computer programming',
+    'computer program language',
+    'Computer software'
+  ]);
+
+  expect(result).toBe(true);
 });
