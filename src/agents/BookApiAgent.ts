@@ -13,4 +13,16 @@ export class BookApiAgent implements BookApiInterface {
 
     return books;
   }
+
+  areValidTags(tagsList: string[]): boolean {
+    const validTags = [
+      'Computer program language',
+      'Development',
+      'Testing',
+      'Computer software',
+      'Computer software, development'
+    ];
+
+    return validTags.some((validTag: string) => tagsList.some((tag: string) => tag === validTag));
+  }
 }
