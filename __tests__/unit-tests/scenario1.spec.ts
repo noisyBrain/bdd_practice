@@ -1,6 +1,7 @@
 import { BookService } from '../../src/services/book.service';
 import { BookFactory } from '../factory/BookFactory';
 import { BookApiAgent } from '../../src/agents/BookApiAgent';
+
 import { book } from '../../constants';
 
 test('book service should be defined', () => {
@@ -38,12 +39,6 @@ test('BookApiAgent should return true if tags exists', () => {
   ]);
 
   expect(result).toBe(true);
-});
-
-test('BookApiAgent should has a method "hasValidTopics"', () => {
-  const agent = new BookApiAgent();
-
-  expect(agent.hasValidTopics).toBeDefined();
 });
 
 test('hasValidTopics should return boolean', () => {
