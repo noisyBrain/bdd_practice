@@ -6,12 +6,9 @@ import { Book } from './types/Book';
 export class BookApiAgent implements BookApiInterface {
   async findBook(title: string): Promise<Book[]> {
     const response = await axios.get(`https://openlibrary.org/search.json?q=${title}`);
+    const foundBooks = response.data?.docs?.filter((book: Book) => this.hasValidTopics(book));
 
-    const books = response.data.docs.filter(
-      (book: Book) => book.subject && book?.subject?.includes('Computer software')
-    );
-
-    return books;
+    return foundBooks;
   }
 
   areValidTags(tagsList: string[]): boolean {
