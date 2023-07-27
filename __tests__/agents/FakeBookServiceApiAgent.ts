@@ -7,6 +7,8 @@ const books: Book[] = [
   }
 ];
 
+// TODO: import book from constants, but first should define a DTO
+
 export class FakeBookServiceApiAgent implements BookApiInterface {
   findBook(_title: string): Book[] {
     return books;
